@@ -9,17 +9,9 @@ on:
       - main
   workflow_dispatch:
 
-env:                                            # <<-- Add environment variables here
-  REACT_APP_API_URL: ${{ secrets.API_URL }}     # <<-- referencing the GitHub secrets
-  REACT_APP_API_KEY: ${{ secrets.API_KEY }}     # <<-- created in Step 2
-
 jobs:
   build:
     runs-on: windows-latest
-
-    defaults:                                             # <<-- Add default working directory
-      run:                                                # <<-- here to ensure deployment 
-        working-directory: ./Humongous.Healthcare.Web/    # <<-- targets correct path.
 
     steps:
       - uses: actions/checkout@v2
@@ -61,5 +53,5 @@ jobs:
         with:
           app-name: 'taw-win-with-app-platform-appsvc-daw2023'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1E0EB73329C94A2BA88B0D94EA71AD3D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5455648798294327808FBCB30FF1FCEF }}
           package: .
