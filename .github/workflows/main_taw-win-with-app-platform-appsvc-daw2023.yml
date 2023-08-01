@@ -17,6 +17,10 @@ jobs:
   build:
     runs-on: windows-latest
 
+    defaults:                                             # <<-- Add default working directory
+      run:                                                # <<-- here to ensure deployment 
+        working-directory: ./Humongous.Healthcare.Web/    # <<-- targets correct path.
+
     steps:
       - uses: actions/checkout@v2
 
