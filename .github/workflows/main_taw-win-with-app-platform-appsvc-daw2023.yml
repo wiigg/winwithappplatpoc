@@ -9,6 +9,10 @@ on:
       - main
   workflow_dispatch:
 
+env:                                            # <<-- Add environment variables here
+  REACT_APP_API_URL: ${{ secrets.API_URL }}     # <<-- referencing the GitHub secrets
+  REACT_APP_API_KEY: ${{ secrets.API_KEY }}     # <<-- created in Step 2
+
 jobs:
   build:
     runs-on: windows-latest
